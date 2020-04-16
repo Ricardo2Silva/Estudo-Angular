@@ -9,17 +9,26 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   /**
-   * Passo 1 criamos a variavel
+   * Passo 1 criamos a function
    */
-  titulo: string = 'meu primeiro app com angular';
+   aoClicarEvento (){
+     alert('botao pressionado')
+   }
 
-  //exemplo 2
+   aoPassar (){
+     console.log('passou o mouse aqui')
+   }
 
-  idade: number =10;
+   aoRetirar (){
+     console.log('retirou o mouse');
+
+   }
+
+
 }
 
 /**
- * toda interpolacao é seguida  de {{ variavel}}
- * a variavel é criada dentro do componente
- * e usada dentro do html respectivo
+ * todo event binding é criado uma funcao que será amarrada ao evento seguido  de (evento) * no html passo 2
+ * a funcao é criada dentro do componente
+ * e usada dentro do html respectivo dentro da tag onde será utilizada
  */

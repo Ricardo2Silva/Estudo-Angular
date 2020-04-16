@@ -1,5 +1,17 @@
-<div>
-  <h1>Interpolation</h1>
-  <h2> {{titulo}} </h2>
-  <h2> {{idade > 18 ? 'Adulto':'Crianca'}} </h2>
+
+
+
+
+
+<div class="container mt-5">
+
+  <div class="jumbotron">
+    <h1 class="display-4">Event binding</h1>
+
+        <!--passo 2  -->
+    <div (click)="aoClicarEvento()" class="btn btn-large btn-success mb-5" >clique aqui</div>
+
+    <div (mouseout)="aoRetirar()" (mouseover)="aoPassar()" class="alert alert-primary">passe o mouse aqui</div>
+
+  </div>
 </div>
