@@ -11,15 +11,11 @@ export class AppComponent {
   /**
    * Passo 1 criamos a variavel
    */
-  titulo: string = 'meu primeiro app com angular';
-
-  //exemplo 2
-
-  idade: number =10;
+  urlImagem:string = 'https://images5.alphacoders.com/913/thumb-1920-913696.jpg';
 }
 
 /**
- * toda interpolacao é seguida  de {{ variavel}}
+ * toda  property binding  é  a propriedade da tag dentro de [propiedade da tag]
  * a variavel é criada dentro do componente
  * e usada dentro do html respectivo
  */
