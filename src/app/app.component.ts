@@ -32,7 +32,9 @@ export class AppComponent {
   mudarEmail (value:any){
     this.email = value
   }
+  //exemplo 3
 
+  sobrenome: string = 'jonas'
 }
 
 /**
