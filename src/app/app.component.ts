@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
     './app.component.css'
   ]
 })
+
 export class AppComponent {
   /**
    * Passo 1 criamos a variavel
@@ -18,26 +19,14 @@ export class AppComponent {
   /**
    * Passo 2 criamos a function
   */
-  atualizar (event: any){
+  atualizar(valor:string){
 
-    this.nome = event.target.value
+    this.nome = valor
   }
 
-  mudarValor (){
-    this.nome = "maça"
-  }
-  // exemplo 2
-  email ='ricardojonasdasilva@gmail.com'
 
-  mudarEmail (value:any){
-    this.email = value
-  }
-  //exemplo 3
-
-  sobrenome: string = 'jonas'
 }
 
 /**
- todo two way data binding o valor poder ser mudado tanto no ts,quanto no html.
- de forma sincronizada (mudança ocorre em tempo real)
+
  */
