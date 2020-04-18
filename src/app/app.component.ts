@@ -9,26 +9,33 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   /**
-   * Passo 1 criamos a function
-   */
-   aoClicarEvento (){
-     alert('botao pressionado')
-   }
+   * Passo 1 criamos a variavel
+   *
+  */
+  nome:string ='Ricardo Jonas';
 
-   aoPassar (){
-     console.log('passou o mouse aqui')
-   }
 
-   aoRetirar (){
-     console.log('retirou o mouse');
+  /**
+   * Passo 2 criamos a function
+  */
+  atualizar (event: any){
 
-   }
+    this.nome = event.target.value
+  }
 
+  mudarValor (){
+    this.nome = "maça"
+  }
+  // exemplo 2
+  email ='ricardojonasdasilva@gmail.com'
+
+  mudarEmail (value:any){
+    this.email = value
+  }
 
 }
 
 /**
- * todo event binding é criado uma funcao que será amarrada ao evento seguido  de (evento) * no html passo 2
- * a funcao é criada dentro do componente
- * e usada dentro do html respectivo dentro da tag onde será utilizada
+ todo two way data binding o valor poder ser mudado tanto no ts,quanto no html.
+ de forma sincronizada (mudança ocorre em tempo real)
  */

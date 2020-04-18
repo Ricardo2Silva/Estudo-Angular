@@ -1,17 +1,38 @@
 
+<div class="container mt-5">
+  <h2>Two Way dataBinding - forma 1</h2>
+
+  <div class="jumbotron">
+    <!-- passo 3 -->
+    <div class="form-group">
+      <input [value]="nome" type="text" class="form-control" (input)="atualizar($event)">
+    </div>
+    <div class="form-group">
+     <button (click)="mudarValor()" class="btn btn-danger">Atualizar nome</button>
+    </div>
+
+    <h3>{{nome}}</h3>
+  </div>
+
+
+</div>
+
+
 
 
 
 
 <div class="container mt-5">
+  <h2>Two Way dataBinding - forma 2</h2>
 
   <div class="jumbotron">
-    <h1 class="display-4">Event binding</h1>
+    <!-- passo 3 -->
+    <div class="form-group">
+      <input [ngModel]="email" type="text" class="form-control" (ngModelChange)="mudarEmail($event)">
+    </div>
 
-        <!--passo 2  -->
-    <div (click)="aoClicarEvento()" class="btn btn-large btn-success mb-5" >clique aqui</div>
-
-    <div (mouseout)="aoRetirar()" (mouseover)="aoPassar()" class="alert alert-primary">passe o mouse aqui</div>
-
+    <h3>{{email}}</h3>
   </div>
+
+
 </div>
