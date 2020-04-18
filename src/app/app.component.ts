@@ -13,15 +13,15 @@ export class AppComponent {
    * Passo 1 criamos a variavel
    *
   */
-  nome:string ='Ricardo Jonas';
+  idade: number;
 
 
   /**
    * Passo 2 criamos a function
   */
-  atualizar(valor:string){
+  verificarIdade(idade:number){
 
-    this.nome = valor
+    this.idade =idade
   }
 
 

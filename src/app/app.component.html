@@ -1,22 +1,26 @@
 
 
 <div class="container mt-5">
-  <h2>Template ref</h2>
+  <h2>Diretiva NgIf</h2>
 
   <div class="jumbotron">
 
     <div class="form-group">
       <!-- passo 3 criamos a referencia(template) -->
-      <input type="text" class="form-control" #valorDoInput>
+      <input type="text" class="form-control" #idadeRef>
     </div>
 
     <div class="form-group">
       <!-- passo 4 passamos no parametro da funcao e pegamos o valor como retorno -->
-      <button class="btn btn-danger" (click)="atualizar(valorDoInput.value)">Atualizar</button>
+      <button class="btn btn-primary" (click)="verificarIdade(idadeRef.value)">Verificar</button>
+    </div>
+    <!-- quando utilizamos a diretiva do ng devemos usar o '*' -->
+    <div *ngIf="idade < 18">
+      <div class="alert alert-danger">é uma criança</div>
+
     </div>
 
-    <h3>{{nome}}</h3>
   </div>
-
+  <!-- O ngIf ele adiciona e remove o elemento da DOM -->
 
 </div>
