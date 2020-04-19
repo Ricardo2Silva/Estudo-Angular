@@ -26,7 +26,7 @@ export class AppComponent {
 
 
 }
-
+// comentario
 /**
  * todo event binding é criado uma funcao que será amarrada ao evento seguido  de (evento) * no html passo 2
  * a funcao é criada dentro do componente
