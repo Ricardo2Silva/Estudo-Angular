@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Carro} from './carro.interface'
 
 @Component({
   selector: 'app-root',
@@ -9,24 +10,13 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  /**
-   * Passo 1 criamos a variavel
-   *
-  */
-  nome:string ='Ricardo Jonas';
-
-
-  /**
-   * Passo 2 criamos a function
-  */
-  atualizar(valor:string){
-
-    this.nome = valor
-  }
-
+  // passo 2
+  carros:Carro[]=[
+    {nome:'Punto',ano:2010},
+    {nome:'I30',ano:2011},
+    {nome:'Opala',ano:1990},
+    {nome:'Honda',ano:2016}
+  ]
 
 }
-
-/**
-  toda template ref criamos  com a # que vai acessar no html o que esta no componente
- */
+// também é preciso usar o * no ngFor para utlizar ele na forma sugar sintax
