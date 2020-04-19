@@ -28,5 +28,5 @@ export class AppComponent {
 }
 
 /**
-
+  toda template ref criamos  com a # que vai acessar no html o que esta no componente
  */
