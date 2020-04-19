@@ -20,3 +20,4 @@ export class AppComponent {
 
 }
 // também é preciso usar o * no ngFor para utlizar ele na forma sugar sintax
+// ngClass deve estar dentro de [] e recebe um objeto com o atributo e colocamos a condicao,ver exemplo no html

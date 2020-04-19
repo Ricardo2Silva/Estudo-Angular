@@ -1,16 +1,30 @@
 
 
 <div class="container mt-5">
-  <h2>diretiva ngFor</h2>
+  <h2>diretiva ngClass</h2>
 
   <div class="jumbotron">
     <!-- passo 3 -->
-    <ul class="list-group" *ngFor= "let carro of carros;let i = index">
-      <li class="list-group-item">{{i+ 1}}-{{carro.nome}}-{{carro.ano}}</li>
+    <ul class="list-group" *ngFor= "let carro of carros">
+      <li class="list-group-item" [ngClass]="{'novo':carro.ano > 2010,'velho':carro.ano <= 2010}">{{carro.nome}}-{{carro.ano}}</li>
     </ul>
   </div>
 
 
 </div>
-<!-- podemos fazer loop em componentes inteiros -->
-<!-- o ngFor nos fornece a variavel index caso,queiramos indexar os itens de uma lista -->
+
+<!-- o ngClass ele adiciona um CSS de acordo com  uma condicao,se acontecer isso: ele aplica tal CSS,caso contrario:aplica esse CSS -->
+<!-- nesse exemplo cada atributo do objeto dentro do ngClass é uma classe CSS -->
+
+<div class="container mt-5">
+  <h2>diretiva ngClass forma 2</h2>
+
+  <div class="jumbotron">
+    <!-- passo 3 -->
+    <ul class="list-group" *ngFor= "let carro of carros">
+      <li class="list-group-item" [class.velho]="carro.ano < 2017" >{{carro.nome}}-{{carro.ano}}</li>
+    </ul>
+  </div>
+
+
+</div>
