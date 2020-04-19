@@ -1,22 +1,14 @@
 
 
 <div class="container mt-5">
-  <h2>Safe Navigation</h2>
 
+  <h2>OnInit lifecycle </h2>
+  <!--metodo que é executado no momento da criaçao do componente   -->
   <div class="jumbotron">
 
-    {{carro?.nome}}
-
-    <!-- sem safe navigation -->
-
-    {{ carro && carro.nome ? carro.nome : 'nao existe'| uppercase}}
-    <!-- se carro nao for nulo e carro.nome nao for nulo entao.... -->
-
+    <h2>{{ carro.nome }}</h2>
 
   </div>
 
-
-
 </div>
-<!-- o Safe Navigation é utilizado para evitar erros de undefined -->
-<!-- utilizamos o ? porque ele é o safe Navigation quando utilizamos ele verifica se o objeto nao é nulo  -->
+
