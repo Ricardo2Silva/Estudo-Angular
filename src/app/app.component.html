@@ -1,39 +1,34 @@
 
 
 <div class="container mt-5">
-  <h2>diretiva ngStyle exemplo 1</h2>
+  <h2>Usando Pipes exemplo 1</h2>
 
   <div class="jumbotron">
-    <!-- passo 1 f -->
-    <ul class="list-group" *ngFor= "let carro of carros">
-      <li class="list-group-item" [style.background]="carro.ano < 2017 ? 'green':'red'">{{carro.nome}}-{{carro.ano}}</li>
-    </ul>
+    <!-- passo 2  -->
+    {{dataNascimento | date : 'dd/MM/yyyy'}}
+    <br>
+    <!-- passo 3 -->
+    <div class="btn btn-success mt-3" (click)='verifica()'>Verifica Data</div>
   </div>
 
 
 </div>
-<!--na forma 1 utilizamos o Style + o atributo dentro de [] e colocamos a condicao junto com seus valores  -->
 
+<!-- Pipes sao usados para mudar apenas a camada de visualizaçao -->
 
 
 <div class="container mt-5">
-  <h2>diretiva ngStyle exemplo 2</h2>
+  <h2>Usando Pipes exemplo 2</h2>
 
   <div class="jumbotron">
-    <!-- passo 1 f -->
-    <ul class="list-group" *ngFor= "let carro of carros">
-      <li class="list-group-item" [ngStyle]="{
-
-        'background': carro.ano < 2017 ? 'yellow':'brown',
-        'font-weight':carro.ano < 2017 ? 'bold':'normal'}">
-
-        {{carro.nome}}-{{carro.ano}}
-
-      </li>
-    </ul>
+    <!-- passo 2  -->
+    {{dataNascimento |date:'fullDate'| uppercase }}
+    <br>
+    <!-- passo 3 -->
+    <div class="btn btn-success mt-3" (click)='verifica()'>Verifica Data</div>
   </div>
 
 
 </div>
-<!--na forma 2 utilizamos o ngStyle e recebe como parametro o estilo desejado,tem que estar  dentro um objeto {}  -->
-
+<!-- podemos usar pipes desencadeados,ou seja um atrás do outro,porém ele altera o ultimo pipe ver exemplo na linha 25,
+primeiro passamos  o pipe para alterar o formato da data,e np segundo usamos para aumentar o tamanho da fonte -->

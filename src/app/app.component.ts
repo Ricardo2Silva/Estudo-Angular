@@ -10,14 +10,15 @@ import {Carro} from './carro.interface'
 })
 
 export class AppComponent {
-  // passo 2
-  carros:Carro[]=[
-    {nome:'Punto',ano:2010},
-    {nome:'I30',ano:2011},
-    {nome:'Opala',ano:1990},
-    {nome:'Honda',ano:2016}
-  ]
+  //  passo 1
+
+  dataNascimento =new Date();
+
+  // passo 4 ver data no console
+
+  verifica(){
+    console.log(this.dataNascimento);
+
+  }
 
 }
-// também é preciso usar o * no ngFor para utlizar ele na forma sugar sintax
-// ngClass deve estar dentro de [] e recebe um objeto com o atributo e colocamos a condicao,ver exemplo no html
