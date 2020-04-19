@@ -1,34 +1,22 @@
 
 
 <div class="container mt-5">
-  <h2>Usando Pipes exemplo 1</h2>
+  <h2>Safe Navigation</h2>
 
   <div class="jumbotron">
-    <!-- passo 2  -->
-    {{dataNascimento | date : 'dd/MM/yyyy'}}
-    <br>
-    <!-- passo 3 -->
-    <div class="btn btn-success mt-3" (click)='verifica()'>Verifica Data</div>
+
+    {{carro?.nome}}
+
+    <!-- sem safe navigation -->
+
+    {{ carro && carro.nome ? carro.nome : 'nao existe'| uppercase}}
+    <!-- se carro nao for nulo e carro.nome nao for nulo entao.... -->
+
+
   </div>
 
 
-</div>
-
-<!-- Pipes sao usados para mudar apenas a camada de visualizaçao -->
-
-
-<div class="container mt-5">
-  <h2>Usando Pipes exemplo 2</h2>
-
-  <div class="jumbotron">
-    <!-- passo 2  -->
-    {{dataNascimento |date:'fullDate'| uppercase }}
-    <br>
-    <!-- passo 3 -->
-    <div class="btn btn-success mt-3" (click)='verifica()'>Verifica Data</div>
-  </div>
-
 
 </div>
-<!-- podemos usar pipes desencadeados,ou seja um atrás do outro,porém ele altera o ultimo pipe ver exemplo na linha 25,
-primeiro passamos  o pipe para alterar o formato da data,e np segundo usamos para aumentar o tamanho da fonte -->
+<!-- o Safe Navigation é utilizado para evitar erros de undefined -->
+<!-- utilizamos o ? porque ele é o safe Navigation quando utilizamos ele verifica se o objeto nao é nulo  -->

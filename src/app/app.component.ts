@@ -10,15 +10,8 @@ import {Carro} from './carro.interface'
 })
 
 export class AppComponent {
-  //  passo 1
 
-  dataNascimento =new Date();
+  carro:Carro;
 
-  // passo 4 ver data no console
-
-  verifica(){
-    console.log(this.dataNascimento);
-
-  }
 
 }
