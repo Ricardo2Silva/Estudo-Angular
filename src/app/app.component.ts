@@ -1,22 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import {Carro} from './carro.interface'
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: [
-    './app.component.css'
-  ]
+  template:`
+
+    <div class="container mt-3">
+      <h2>Lista de compras APP </h2>
+      <lista-compras> </lista-compras>
+
+    </div>
+  `
 })
 
- export class AppComponent  implements OnInit{ //passo 2
-  // passo 1
-  carro:Carro;
+export class AppComponent {
 
-  // passo 3 (esse metodo é executado antes na inicializaçao do componente)
-  ngOnInit(){
-
-    console.log('iniciando componente');
-    this.carro ={nome:'punto', ano: 2010}
-  }
 }
