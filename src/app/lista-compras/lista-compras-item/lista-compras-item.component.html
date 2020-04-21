@@ -5,6 +5,9 @@
   <div class="card-body">
 
     <p class="card-text">{{item.categoria}}<br>
-      {{item?.valor | currency}}</p>
+      {{item?.valor | currency}}
+    </p>
+    <!-- passo 1 criar o botao -->
+    <a href="#" class="btn btn-danger " (click)="onRemove()">Remover</a>
   </div>
 </div>

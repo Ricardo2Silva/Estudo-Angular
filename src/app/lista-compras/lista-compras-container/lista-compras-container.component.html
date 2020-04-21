@@ -7,7 +7,17 @@
 
   <div class="mt-4">
     <h5>Listagem</h5>
-    <lista-compras-item [item]="itemLista" *ngFor="let itemLista of lista"></lista-compras-item>
+    <!-- extra -->
+      <div *ngIf = "! lista ||!lista.length">
+         <div class="alert alert-warning" role="alert">
+            Nao existe lista para ser exibida
+         </div>
+      </div>
+
+
+
+    <!-- passo 4 -->
+    <lista-compras-item (remover)="onRemoveHandler($event) " [item]="itemLista" *ngFor="let itemLista of lista"></lista-compras-item>
   </div>
 
 </div>
