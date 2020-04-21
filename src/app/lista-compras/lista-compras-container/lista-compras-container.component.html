@@ -6,7 +6,8 @@
   </div>
 
   <div class="mt-4">
-    <lista-compras-listagem [listaCompras]="lista"></lista-compras-listagem>
+    <h5>Listagem</h5>
+    <lista-compras-item [item]="itemLista" *ngFor="let itemLista of lista"></lista-compras-item>
   </div>
 
 </div>
