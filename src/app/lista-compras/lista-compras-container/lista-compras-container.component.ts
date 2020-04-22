@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ItemLista } from 'src/app/models/itemLista.model';
+import { ItemLista } from '../models/itemLista.model';
 import {ListaComprasService} from '../services/lista-compras.service'
+
 
 @Component({
   selector: 'lista-compras',
   templateUrl:'lista-compras-container.component.html',
-  styleUrls:['lista-compras-container.component.css'],
-  providers:[ListaComprasService]
+  styleUrls:['lista-compras-container.component.css']
+
 })
 
 
@@ -21,6 +22,7 @@ export class ListaComprasContainerComponent implements OnInit{
   }
   ngOnInit():void{
     this.lista =this.listaComprasService.getListaCompras()
+
   }
 
   onRemoveHandler(event:number){

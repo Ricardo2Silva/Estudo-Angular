@@ -10,7 +10,7 @@ export class ListaComprasContadorComponent{
 
   // utilizamos o input para poder acessar essa informacao em outro local
   @Input()
-  qtdItens = 0;
+  qtdItens:number;
 
 
 

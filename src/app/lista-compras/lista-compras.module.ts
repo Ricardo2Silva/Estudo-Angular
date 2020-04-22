@@ -8,7 +8,8 @@ import {ListaComprasItemComponent} from './lista-compras-item/lista-compras-item
 import {ListaComprasFormularioComponent} from './lista-compras-formulario/lista-compras-formulario.component'
 
 // services
-
+import {CategoriaService} from '../shared/services/categoria.service'
+import { ListaComprasService } from './services/lista-compras.service';
 
 
 // criamos os componentes  e importamos dentro do module
@@ -24,7 +25,8 @@ import {ListaComprasFormularioComponent} from './lista-compras-formulario/lista-
   ],
   exports:[
     ListaComprasContainerComponent
-  ]
+  ],
+  providers:[CategoriaService,ListaComprasService]
 
 })
 

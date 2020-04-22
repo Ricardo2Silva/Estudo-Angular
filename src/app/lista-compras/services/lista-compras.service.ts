@@ -1,51 +1,53 @@
-import { Component, IterableDiffers } from '@angular/core';
-import { ItemLista } from 'src/app/models/itemLista.model';
 
+import { ItemLista } from '../models/itemLista.model';
+import {CategoriaService} from '../../shared/services/categoria.service';
+import {Categoria} from '../../shared/models/categoria.model';
+import {Injectable} from '@angular/core';
 
-@Component({
-  selector:'lista-compras-service',
-  templateUrl:'lista-compras.service.html',
-  styleUrls:['lista-compras.service.css']
-})
+@Injectable()
+export class ListaComprasService {
 
-export class ListaComprasService{
+  list: ItemLista[] = [
+    {id: 1, nome: 'macbook' , valor: 10.000},
+    {id: 2, nome: 'feijao'},
+    {id: 3, nome: 'bananinha'},
+    {id: 4, nome: 'vaio', valor: 3.000},
+    {id: 5, nome: 'acucar', valor: 1.5},
+    {id: 6, nome: 'arroz', valor: 15.75}
+  ];
 
-  lista:ItemLista[]=[
-
-    {id: 1,nome:'macbook',categoria: 'ELETRONICOS',valor: 10.000},
-    {id: 2,nome:'feijao',categoria: 'ALIMENTOS'},
-    {id: 3,nome:'banana',categoria: 'ALIMENTOS'},
-    {id: 4,nome:'vaio',categoria: 'ELETRONICOS',valor: 3.000},
-    {id: 5,nome:'acucar',categoria: 'ALIMENTOS',valor: 1.5},
-    {id: 6,nome:'arroz',categoria: 'ALIMENTOS',valor: 15.75}
-
-  ]
-
-  constructor(){
-
-  }
-  getListaCompras():ItemLista[]{
-    return this.lista
+  constructor(private categoriaService: CategoriaService) {
   }
 
-  removerItem(id:number):ItemLista[]{
-    // removendo o item
-    this.lista =this.lista.filter(item => item.id !==id)
-    return this.lista
+  getListaCompras(): ItemLista[] {
+    const categorias: Categoria[] = this.categoriaService.getCategorias();
+
+    this.list = this.list.map(item => {
+      item.categoria = categorias[0];
+      return item;
+    });
+
+    return this.list;
   }
 
-  // todo -precisa implementar
+  removerItem(id: number): ItemLista[] {
+    this.list = this.list.filter(item => item.id !== id);
+    return this.list;
+  }
 
-  getItemLista(id:number):ItemLista{
+  // todo - precisa implementar
+  getItemLista(id: number): ItemLista {
     return null;
   }
 
-  // todo -precisa implementar
-  addItemLista(item:ItemLista):ItemLista{
+  // todo - precisa implementar
+  addItemLista(item: ItemLista): ItemLista {
     return null;
   }
-  // todo -precisa implementar
-  getListarFilter(descricao:string):ItemLista[]{
+
+  // todo - precisa implementar
+  getListaFilter(descricao: string): ItemLista[] {
     return [];
   }
+
 }
