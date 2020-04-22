@@ -7,6 +7,9 @@ import {ListaComprasContadorComponent} from './lista-compras-contador/lista-comp
 import {ListaComprasItemComponent} from './lista-compras-item/lista-compras-item.component'
 import {ListaComprasFormularioComponent} from './lista-compras-formulario/lista-compras-formulario.component'
 
+// services
+
+
 
 // criamos os componentes  e importamos dentro do module
 @NgModule({
@@ -22,6 +25,7 @@ import {ListaComprasFormularioComponent} from './lista-compras-formulario/lista-
   exports:[
     ListaComprasContainerComponent
   ]
+
 })
 
 export class ListaComprasModule{

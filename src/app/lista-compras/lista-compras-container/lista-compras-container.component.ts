@@ -1,30 +1,35 @@
-import { Component } from '@angular/core';
-import { Itemlista } from 'src/app/models/itemLista.model';
+import { Component, OnInit } from '@angular/core';
+import { ItemLista } from 'src/app/models/itemLista.model';
+import {ListaComprasService} from '../services/lista-compras.service'
 
 @Component({
   selector: 'lista-compras',
   templateUrl:'lista-compras-container.component.html',
-  styleUrls:['lista-compras-container.component.css']
+  styleUrls:['lista-compras-container.component.css'],
+  providers:[ListaComprasService]
 })
 
 
 
-export class ListaComprasContainerComponent{
+export class ListaComprasContainerComponent implements OnInit{
 
-  lista: Itemlista[]= [
+  lista:ItemLista[ ];
 
-    {id: 1,nome:'macbook',categoria: 'ELETRONICOS',valor: 10.000},
-    {id: 2,nome:'feijao',categoria: 'ALIMENTOS'},
-    {id: 3,nome:'banana',categoria: 'ALIMENTOS'},
-    {id: 4,nome:'vaio',categoria: 'ELETRONICOS',valor: 3.000},
-    {id: 5,nome:'acucar',categoria: 'ALIMENTOS',valor: 1.5},
-    {id: 6,nome:'arroz',categoria: 'ALIMENTOS',valor: 15.75}
 
-  ];
+  constructor(private listaComprasService:ListaComprasService){
+
+  }
+  ngOnInit():void{
+    this.lista =this.listaComprasService.getListaCompras()
+  }
 
   onRemoveHandler(event:number){
-    console.log('estou no container recebendo o id que veio do ItemLista', event);
-    // removendo o item
-    this.lista =this.lista.filter(item => item.id !==event)
+    this.lista= this.listaComprasService.removerItem(event)
+
   }
 }
+// criamos o serviço de lista de compras e passamos ele dentro do constructor,neste momento ele fica acessivel a esse componente onde é possivel acessar seus metodos
+
+// error : "no provider for" ListComprasService
+
+// é preciso colocar o service no providers para todos os componentes ter acesso a eles dentro do modulo

@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Itemlista } from 'src/app/models/itemLista.model';
+import { ItemLista } from 'src/app/models/itemLista.model';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { Itemlista } from 'src/app/models/itemLista.model';
 
 export class ListaComprasItemComponent{
   @Input()
-  item: Itemlista;
+  item: ItemLista;
 
   // passo 2
   @Output()
