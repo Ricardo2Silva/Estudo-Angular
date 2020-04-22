@@ -1,6 +1,12 @@
 
 <div>
 
+  <div class="mt-4">
+     <h4 style="color: red;">Formulario</h4>
+    <lista-compras-formulario></lista-compras-formulario>
+  </div>
+
+
   <div class='mt-4'>
     <lista-compras-contador [qtdItens]="lista.length"></lista-compras-contador> <br>
   </div>
@@ -8,16 +14,16 @@
   <div class="mt-4">
     <h5>Listagem</h5>
     <!-- extra -->
-      <div *ngIf = "! lista ||!lista.length">
-         <div class="alert alert-warning" role="alert">
-            Nao existe lista para ser exibida
-         </div>
+
+    <div *ngIf = "! lista ||!lista.length">
+      <div class="alert alert-warning" role="alert">
+        Nao existe lista para ser exibida
       </div>
-
-
-
+    </div>
     <!-- passo 4 -->
+
     <lista-compras-item (remover)="onRemoveHandler($event) " [item]="itemLista" *ngFor="let itemLista of lista"></lista-compras-item>
+
   </div>
 
 </div>
