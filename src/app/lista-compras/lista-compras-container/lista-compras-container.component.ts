@@ -21,12 +21,24 @@ export class ListaComprasContainerComponent implements OnInit{
 
   }
   ngOnInit():void{
-    this.lista =this.listaComprasService.getListaCompras()
+    this.listaComprasService.listarTodos().subscribe(
+
+      (data)=>{
+        this.lista = data;
+      },
+
+      (error)=>{
+        console.log('ocorreu um erro', error);
+
+      }
+
+
+    )
 
   }
 
-  onRemoveHandler(event:number){
-    this.lista= this.listaComprasService.removerItem(event)
+  onRemoveHandler(){
+
 
   }
 }
