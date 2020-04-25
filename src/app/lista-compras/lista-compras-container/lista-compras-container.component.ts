@@ -21,6 +21,10 @@ export class ListaComprasContainerComponent implements OnInit{
 
   }
   ngOnInit():void{
+    this.carregarLista()
+
+  }
+  carregarLista():void{
     this.listaComprasService.listarTodos().subscribe(
 
       (data)=>{
@@ -34,16 +38,9 @@ export class ListaComprasContainerComponent implements OnInit{
 
 
     )
-
   }
-
-  onRemoveHandler(){
-
-
+  onRemoveHandler(itemId:number){
+    this.listaComprasService.removerItem(itemId).subscribe(data => console.log(data),error => console.log(error));
+    this.carregarLista();
   }
 }
-// criamos o serviço de lista de compras e passamos ele dentro do constructor,neste momento ele fica acessivel a esse componente onde é possivel acessar seus metodos
-
-// error : "no provider for" ListComprasService
-
-// é preciso colocar o service no providers para todos os componentes ter acesso a eles dentro do modulo

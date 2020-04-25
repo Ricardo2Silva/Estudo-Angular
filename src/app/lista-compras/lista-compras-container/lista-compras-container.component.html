@@ -22,7 +22,7 @@
     </div>
     <!-- passo 4 -->
 
-    <lista-compras-item (remover)="onRemoveHandler() " [item]="itemLista" *ngFor="let itemLista of lista"></lista-compras-item>
+    <lista-compras-item (remover)="onRemoveHandler($event) " [item]="itemLista" *ngFor="let itemLista of lista"></lista-compras-item>
 
   </div>
 

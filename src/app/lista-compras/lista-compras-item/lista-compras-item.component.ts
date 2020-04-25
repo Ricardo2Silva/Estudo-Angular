@@ -14,11 +14,10 @@ export class ListaComprasItemComponent{
   @Input()
   item: ItemLista;
 
-  // passo 2
+
   @Output()
   remover:EventEmitter<number> = new EventEmitter()
 
-  // passo 3 criar a acao para o botao
 
   onRemove(){
     this.remover.emit(this.item.id)
@@ -26,4 +25,4 @@ export class ListaComprasItemComponent{
   }
 
 }
-// existem dois 2 EventEmitter: o qual utilizamos pertence ao angular
+
