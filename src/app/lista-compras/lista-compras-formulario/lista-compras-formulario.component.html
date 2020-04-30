@@ -1,20 +1,29 @@
+<form  (ngSubmit)="onSubmit()">
 
+  <div class="form-row">
+    <div class="col-3">
+      <input class="form-control" type="text" [(ngModel)]="itemLista.nome" name="nome" type="text" placeholder="descrição do item">
+    </div>
+    <div class="col-3">
+      <select class="custom-select mr-sm-2" [(ngModel)]="itemLista.categoria" name="categoria" >
+        <option selected > selecione a Categoria</option>
+        <option value="1">Eletrônico</option>
+        <option value="2">Alimento</option>
+      </select>
+    </div>
+    <div class="col-3">
+      <input class="form-control" [(ngModel)]="itemLista.valor" name="valor" type="number" placeholder="valor do item">
+    </div>
+    <div class="col-3">
+      <button type="submit"
+              class="btn btn-block btn-danger "
+              [disabled]="itemLista">
+        Inserir item
+      </button>
+    </div>
+    <div class="col-12">
+      <hr>
+    </div>
+  </div>
 
-<div class="form-row">
-  <div class="col-4">
-    <input class="form-control" type="text" placeholder="descrição do item">
-  </div>
-  <div class="col-4">
-    <input class="form-control" type="text" placeholder="valor do item">
-  </div>
-  <div class="col-4">
-    <select class="custom-select mr-sm-2" id="inLineFormCustomSelect">
-      <option selected>Categoria</option>
-      <option value="1">Eletrônico</option>
-      <option value="2">Alimento</option>
-    </select>
-  </div>
-  <div class="col-12">
-    <hr>
-  </div>
-</div>
+</form>

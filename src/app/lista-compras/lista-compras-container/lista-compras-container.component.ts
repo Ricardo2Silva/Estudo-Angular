@@ -43,4 +43,8 @@ export class ListaComprasContainerComponent implements OnInit{
     this.listaComprasService.removerItem(itemId).subscribe(data => console.log(data),error => console.log(error));
     this.carregarLista();
   }
+  onInsertHandler(item:ItemLista){
+    this.listaComprasService.inserirItem(item).subscribe(data => console.log(data),error => console.log(error));
+    this.carregarLista();
+  }
 }
